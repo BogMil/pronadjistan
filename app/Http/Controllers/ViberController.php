@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Http;
 
 class ViberController extends Controller
@@ -14,9 +15,9 @@ class ViberController extends Controller
         ]);
     }
 
-    public function handleCallback($response){
-
-        dd(1);
-        dd($response);
+    public function handleCallback(Request $request){
+        $myfile = fopen("testfile.txt", "w");
+        fwrite($myfile, $request);
+        return response(200);
     }
 }
