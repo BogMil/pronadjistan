@@ -20,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::post('/handleCallback', [ViberController::class, 'handleCallback']);
+Route::post('/handlecallback', [ViberController::class, 'handleCallback']);
