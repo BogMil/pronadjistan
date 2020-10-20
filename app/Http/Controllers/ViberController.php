@@ -16,7 +16,7 @@ class ViberController extends Controller
     }
 
     public function handleCallback(Request $request){
-        $myfile = fopen("testfile.txt", "w");
+        $myfile = fopen("testfile.txt", "a");
         fwrite($myfile, $request);
         return response('',200);
     }
