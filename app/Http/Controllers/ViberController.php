@@ -20,4 +20,10 @@ class ViberController extends Controller
         // fwrite($myfile, $request);
         return response('OK',200);
     }
+
+    public function getTest(){
+        // $myfile = fopen("testfile.txt", "w");
+        // fwrite($myfile, $request);
+        return response('OK test',200);
+    }
 }
