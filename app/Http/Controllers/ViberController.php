@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Http;
 
-class MessageSenderController extends Controller
+class ViberController extends Controller
 {
     public function SendMessage(){
         $response = Http::withHeaders([
@@ -12,5 +12,9 @@ class MessageSenderController extends Controller
         ])->post('https://chatapi.viber.com/pa/send_message', [
             'name' => 'Taylor',
         ]);
+    }
+
+    public function handleCallback($response){
+        dd($response);
     }
 }
