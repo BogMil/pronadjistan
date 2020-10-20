@@ -15,6 +15,8 @@ class ViberController extends Controller
     }
 
     public function handleCallback($response){
+
+        dd(1);
         dd($response);
     }
 }
