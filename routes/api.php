@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\GradController;
+use App\Http\Controllers\UniverzalnaPretragaController;
 use App\Http\Controllers\ViberController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,4 +23,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::post('/handlecallback', [ViberController::class, 'handleCallback']);
-Route::get('/get', [ViberController::class, 'getTest']);
+
+
+Route::get('/gradovi', [GradController::class, 'gradovi']);
+Route::get('grad/{idGrada}/opstine/', [GradController::class, 'opstine']);
+
+Route::post('/univerzalnaPretraga', [UniverzalnaPretragaController::class, 'create']);
+

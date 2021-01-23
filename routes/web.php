@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PretragaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,6 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia\Inertia::render('Dashboard');
 })->name('dashboard');
+
+
+Route::get('/pretraga/createForm', [PretragaController::class,'getCreateForm'])->name('pretraga.createForm');
